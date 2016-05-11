@@ -37,6 +37,7 @@ write_profile() {
   local build_dir="$2"
   mkdir -p $build_dir/.profile.d
   cp $bp_dir/profile/* $build_dir/.profile.d/
+  cd $build_dir && ln -sf $APP_SUBDIR/.profile.d ../.profile.d && cd -
 }
 
 write_export() {
